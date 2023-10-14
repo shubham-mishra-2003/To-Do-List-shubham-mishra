@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList | crafted by shubham.mishra</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+        <h2>To-Do List | crafted by shubham.mishra</h2>
+      <div class="inputwraper">
+        <div class="textInputWrapper">
+          <input
+            placeholder="Type to add in list"
+            type="text"
+            class="textInput"
+            id="listinput"
+          />
+        </div>
+        <img src="./images/icon.png" />
+        <div class="button">
+          <button class="cssbuttons-io-button" onclick="addItem()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+              ></path>
+            </svg>
+            <span>Add</span>
+          </button>
+        </div>
+      </div>
+      <div class="addedList">
+        <p>Added to list</p>
+        <ul id="listitems">
+          <!-- <li class="checked">1st Item</li>
+          <li>1st Item</li>
+          <li>1st Item</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

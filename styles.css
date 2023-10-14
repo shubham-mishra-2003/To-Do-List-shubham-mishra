@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  box-sizing: border-box;
+  font-family: "Poppins", "sans-serif";
+}
+
+body {
+  background-image: url("./images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 5px;
+  color: #e8e8e8;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  padding: 0px 20px 30px 0px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  max-width: 1000px;
+  max-height: 500px;
+}
+.inputwraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputwraper img {
+  height: 40px;
+  margin-right: 100px;
+}
+
+/*List input */
+.textInputWrapper {
+  position: relative;
+  width: 300px;
+  --accent-color: #fff;
+  margin: 10px;
+  margin-right: 10px;
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #e8e8e8;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 12px;
+  width: 100%;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #353535;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
+}
+
+/*Add Button */
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  background: #fff;
+  border: none;
+  letter-spacing: 0.05em;
+  height: 40px;
+  width: 100px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 5px;
+  height: 2rem;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0px 0px 10px #00c8ff98;
+  background: #00c8ff98;
+  color: #252525;
+  scale: (1.1);
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0px 0px 20px #00c8ff98;
+  background: #6ee0ff98;
+  color: #252525;
+  scale: (0.9);
+}
+
+/*List*/
+.addedList {
+  background: rgba(255, 255, 255, 1);
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  overflow: hidden;
+  max-height: 400px;
+}
+.addedList p {
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: oblique;
+}
+
+ul {
+  margin-top: 25px;
+  overflow-y: scroll;
+  height: 300px;
+  scroll-behavior: smooth;
+}
+ul li {
+  list-style: none;
+  font-size: 1.2rem;
+  padding: 12px 8px 12px 50px;
+  font-style: oblique;
+  cursor: pointer;
+  position: relative;
+}
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 1px solid #353232;
+  left: 8px;
+  top: 14px;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+}
+ul li.checked {
+  color: #0008ff;
+  text-decoration: line-through;
+}
+ul li.checked::before {
+  background-image: url(images/checked.png);
+}
+
+ul::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+}
+ul li span:hover {
+  background: #edeef0;
+  border-radius: 50%;
+}
+
+@media (max-width: 580px) {
+  .container {
+    max-width: 550px;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .inputwraper {
+    height: 30px;
+    margin-top: 10px;
+  }
+  .inputwraper img {
+    height: 30px;
+  }
+  .textInputWrapper {
+    width: 200px;
+  }
+  .cssbuttons-io-button {
+    height: 30px;
+    width: 80px;
+    font-size: 1rem;
+  }
+  .addedList p {
+    font-size: 1.3rem;
+  }
+  ul li {
+    font-size: 0.9rem;
+    padding: 10px 6px 10px 30px;
+  }
+  ul li::before {
+    height: 12px;
+    width: 12px;
+  }
+  ul li span {
+    width: 30px;
+    height: 30px;
+    font-size: 1.6rem;
+  }
+  ul li span:hover {
+    color: #0008ff;
+    background: none;
+  }
+}
+
+@media (max-width: 470px) {
+  .container {
+    max-width: 400px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .inputwraper {
+    height: 40px;
+    margin-top: 10px;
+  }
+  .inputwraper img {
+    height: 30px;
+  }
+  .textInputWrapper {
+    width: 150px;
+  }
+  .textInput::placeholder{
+    font-size: 1rem;
+  }
+  .cssbuttons-io-button {
+    height: 30px;
+    width: 70px;
+  }
+  .cssbuttons-io-button svg{
+    height: 20px;
+  }
+  .addedList p {
+    font-size: 1.3rem;
+  }
+  ul li {
+    font-size: 0.9rem;
+    padding: 10px 6px 10px 30px;
+  }
+  ul li::before {
+    height: 12px;
+    width: 12px;
+  }
+  ul li span {
+    width: 30px;
+    height: 30px;
+    font-size: 1.6rem;
+  }
+  ul li span:hover {
+    color: #0008ff;
+    background: none;
+  }
+}
