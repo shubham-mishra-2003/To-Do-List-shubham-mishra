@@ -33,6 +33,7 @@ h2 {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
   max-width: 1000px;
+  border-radius: 20px;
   max-height: 500px;
 }
 .inputwraper {
